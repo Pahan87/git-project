@@ -1,0 +1,23 @@
+<?php
+/* @var $this PageController */
+/* @var $dataProvider CActiveDataProvider */
+
+$this->breadcrumbs=array(
+	'Pages',
+);
+
+$this->menu=array(
+	array('label'=>'Create Page', 'url'=>array('create')),
+	array('label'=>'Manage Page', 'url'=>array('admin')),
+);
+?>
+
+<h1>Страницы</h1>
+
+<?php $this->widget('zii.widgets.CListView', array(
+	'dataProvider'=>$dataProvider,
+	'itemView'=>'_view',
+        'summaryText'=>'{start} - {end} из {count}',
+        'sorterHeader'=>'Сортировать по:',
+        'sortableAttributes'=>array('title','id')
+)); ?>
